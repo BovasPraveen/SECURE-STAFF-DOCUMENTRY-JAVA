@@ -1,0 +1,15 @@
+<service>
+  <id>StaffDocRepository</id>
+  <name>Staff Document Repository</name>
+  <description>Secure Staff Document Repository with RBAC</description>
+  <executable>java</executable>
+  <arguments>-jar "%BASE%\target\staff-doc-repository-1.0.0.jar"</arguments>
+  <workingdirectory>%BASE%</workingdirectory>
+  <logpath>%BASE%\logs</logpath>
+  <log mode="roll-by-size">
+    <sizeThreshold>10240</sizeThreshold>
+    <keepFiles>5</keepFiles>
+  </log>
+  <startmode>Automatic</startmode>
+  <onfailure action="restart" delay="10 sec"/>
+</service>
